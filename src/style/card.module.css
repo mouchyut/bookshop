@@ -1,25 +1,36 @@
 .container {
   padding: 20px;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
 .cardGroup {
   display: flex;
-  flex-direction: column; /* Stack cards vertically */
-  gap: 20px; /* Add spacing between cards */
-  align-items: center; /* Center the cards horizontally */
+  flex-direction: row; /* เปลี่ยนจาก column เป็น row */
+  gap: 50px; /* ระยะห่างระหว่าง card */
+  justify-content: center; /* หรือใช้ space-between, space-around ตามต้องการ */
+  flex-wrap: wrap; /* ถ้าอยากให้ขึ้นบรรทัดใหม่ตอนเต็ม */
+  margin-top: 70px;
+  
+}
+@media (max-width: 768px) {
+  .cardGroup {
+    flex-direction: column; /* กลับมาเรียงแนวตั้งบนจอเล็ก */
+    align-items: center;
+  }
 }
 
 .card {
-  width: 300px; /* Fixed width for consistency */
+  width: 400px; /* Fixed width for consistency */
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 15px;
   overflow: hidden;
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  min-height: 400px; /* Ensure equal height */
+  min-height: 350px; /* Ensure equal height */
+  margin-top: 20px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
 }
 
 .cardImage {
@@ -52,4 +63,69 @@
 .textMuted {
   color: #6c757d;
   font-size: 0.875rem;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column; /* ทำให้ content เป็นแนวตั้ง */
+  justify-content: space-between; /* กระจายให้พอเหมาะ */
+  height: 100%;
+  gap: 10px;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.activeStar {
+  color: #00aa00; /* สีเขียวเข้ม */
+}
+.inactiveStar {
+  color: #d0f0d0; /* สีเขียวอ่อน */
+}
+
+.actionGroup {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* ให้ตำแหน่งของราคาและปุ่มอยู่ทางขวา */
+  gap: 10px;
+  width: 100%;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background-color: #eeeeee;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #222;
+  font-size: 1rem;
+}
+.price:hover {
+  background-color:oklch(92.8% 0.006 264.531);
+}
+
+
+.cart {
+  font-size: 1.2rem;
+}
+
+.detail {
+  background-color: #00aaff;
+  color: #222;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.detail:hover {
+  background-color: #0090d4;
 }
